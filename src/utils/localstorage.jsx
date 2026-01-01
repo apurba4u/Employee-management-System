@@ -1,0 +1,261 @@
+const employees = [
+  {
+    id: 1,
+    firstName: "Rahul",
+    email: "employee1@company.com",
+    password: "123",
+    taskStats: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "Prepare sales report",
+        description: "Create monthly sales performance report",
+        date: "2025-01-10",
+        category: "Reporting",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "Client follow-up",
+        description: "Follow up with potential enterprise clients",
+        date: "2025-01-12",
+        category: "Communication",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "CRM cleanup",
+        description: "Remove duplicate entries from CRM",
+        date: "2025-01-15",
+        category: "Maintenance",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    firstName: "Amit",
+    email: "employee2@company.com",
+    password: "123",
+    taskStats: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "Design homepage banner",
+        description: "Create a new banner for the landing page",
+        date: "2025-01-11",
+        category: "Design",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "Update brand assets",
+        description: "Organize and update brand icons",
+        date: "2025-01-13",
+        category: "Design",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "Fix UI bugs",
+        description: "Resolve alignment issues on mobile view",
+        date: "2025-01-14",
+        category: "UI",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+
+  {
+    id: 3,
+    firstName: "Sanjay",
+    email: "employee3@company.com",
+    password: "123",
+    taskStats: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "API integration",
+        description: "Integrate payment gateway API",
+        date: "2025-01-09",
+        category: "Development",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "Code refactor",
+        description: "Refactor authentication module",
+        date: "2025-01-10",
+        category: "Backend",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "Unit testing",
+        description: "Write unit tests for user service",
+        date: "2025-01-16",
+        category: "Testing",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+
+  {
+    id: 4,
+    firstName: "Vikram",
+    email: "employee4@company.com",
+    password: "123",
+    taskStats: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "Server monitoring",
+        description: "Monitor server health and logs",
+        date: "2025-01-08",
+        category: "DevOps",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "Backup setup",
+        description: "Configure daily database backups",
+        date: "2025-01-11",
+        category: "Infrastructure",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "Deployment issue",
+        description: "Fix failed production deployment",
+        date: "2025-01-17",
+        category: "Deployment",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+
+  {
+    id: 5,
+    firstName: "Priya",
+    email: "employee5@company.com",
+    password: "123",
+    taskStats: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "Content writing",
+        description: "Write blog post on new features",
+        date: "2025-01-07",
+        category: "Content",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "SEO optimization",
+        description: "Optimize blog for search engines",
+        date: "2025-01-12",
+        category: "Marketing",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "Campaign analysis",
+        description: "Analyze performance of ad campaign",
+        date: "2025-01-18",
+        category: "Analytics",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+];
+
+const admin = [
+  {
+    id: 101,
+    firstName: "Anil",
+    email: "admin@company.com",
+    password: "345",
+  },
+];
+
+export const setLocalstorage = () => {
+  localStorage.setItem('employees',JSON.stringify(employees))
+  localStorage.setItem('admin', JSON.stringify(admin))
+}
+export const getLocalstorage = () => {
+  const employees = JSON.parse(localStorage.getItem('employees'))
+  const admin = JSON.parse(localStorage.getItem('admin'))
+  console.log(employees)
+  console.log(admin)
+}
