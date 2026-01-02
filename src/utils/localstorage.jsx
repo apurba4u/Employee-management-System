@@ -4,12 +4,7 @@ const employees = [
     firstName: "Rahul",
     email: "employee1@company.com",
     password: "123",
-    taskStats: {
-      active: 1,
-      newTask: 1,
-      completed: 1,
-      failed: 1,
-    },
+    taskCounts: { active: 1, newTask: 1, completed: 1, failed: 1 },
     tasks: [
       {
         taskNo: 1,
@@ -46,18 +41,12 @@ const employees = [
       },
     ],
   },
-
   {
     id: 2,
-    firstName: "Amit",
-    email: "employee2@company.com",
+    firstName: "Ovi",
+    email: "o@o.com",
     password: "123",
-    taskStats: {
-      active: 1,
-      newTask: 1,
-      completed: 1,
-      failed: 1,
-    },
+    taskCounts: { active: 1, newTask: 1, completed: 1, failed: 1 },
     tasks: [
       {
         taskNo: 1,
@@ -94,18 +83,12 @@ const employees = [
       },
     ],
   },
-
   {
     id: 3,
     firstName: "Sanjay",
     email: "employee3@company.com",
     password: "123",
-    taskStats: {
-      active: 1,
-      newTask: 1,
-      completed: 1,
-      failed: 1,
-    },
+    taskCounts: { active: 1, newTask: 1, completed: 1, failed: 1 },
     tasks: [
       {
         taskNo: 1,
@@ -142,18 +125,12 @@ const employees = [
       },
     ],
   },
-
   {
     id: 4,
     firstName: "Vikram",
     email: "employee4@company.com",
     password: "123",
-    taskStats: {
-      active: 1,
-      newTask: 1,
-      completed: 1,
-      failed: 1,
-    },
+    taskCounts: { active: 1, newTask: 1, completed: 1, failed: 1 },
     tasks: [
       {
         taskNo: 1,
@@ -190,18 +167,12 @@ const employees = [
       },
     ],
   },
-
   {
     id: 5,
     firstName: "Priya",
     email: "employee5@company.com",
     password: "123",
-    taskStats: {
-      active: 1,
-      newTask: 1,
-      completed: 1,
-      failed: 1,
-    },
+    taskCounts: { active: 1, newTask: 1, completed: 1, failed: 1 },
     tasks: [
       {
         taskNo: 1,
@@ -238,6 +209,216 @@ const employees = [
       },
     ],
   },
+  {
+    id: 6,
+    firstName: "Arjun",
+    email: "employee6@company.com",
+    password: "123",
+    taskCounts: { active: 2, newTask: 1, completed: 0, failed: 1 },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "Market research",
+        description: "Research competitors pricing models",
+        date: "2025-02-01",
+        category: "Research",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "Survey analysis",
+        description: "Analyze customer survey responses",
+        date: "2025-02-03",
+        category: "Analytics",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "Presentation delay",
+        description: "Client presentation postponed",
+        date: "2025-02-05",
+        category: "Communication",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+  {
+    id: 7,
+    firstName: "Neha",
+    email: "employee7@company.com",
+    password: "123",
+    taskCounts: { active: 0, newTask: 0, completed: 3, failed: 0 },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "UX review",
+        description: "Review user onboarding flow",
+        date: "2025-02-02",
+        category: "UX",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "Design tweaks",
+        description: "Apply small UI improvements",
+        date: "2025-02-04",
+        category: "Design",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "Prototype handoff",
+        description: "Handoff prototype to dev team",
+        date: "2025-02-06",
+        category: "Collaboration",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+    ],
+  },
+  {
+    id: 8,
+    firstName: "Rohit",
+    email: "employee8@company.com",
+    password: "123",
+    taskCounts: { active: 1, newTask: 1, completed: 1, failed: 1 },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "Bug investigation",
+        description: "Investigate production bug",
+        date: "2025-02-01",
+        category: "Debugging",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "Hotfix deployment",
+        description: "Deploy urgent hotfix",
+        date: "2025-02-02",
+        category: "Deployment",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "Rollback issue",
+        description: "Rollback caused config issue",
+        date: "2025-02-03",
+        category: "Incident",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+  {
+    id: 9,
+    firstName: "Kavita",
+    email: "employee9@company.com",
+    password: "123",
+    taskCounts: { active: 3, newTask: 2, completed: 0, failed: 0 },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "Campaign planning",
+        description: "Plan Q2 marketing campaign",
+        date: "2025-02-01",
+        category: "Marketing",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "Influencer outreach",
+        description: "Reach out to influencers",
+        date: "2025-02-03",
+        category: "Outreach",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "Ad creatives",
+        description: "Prepare ad creatives",
+        date: "2025-02-04",
+        category: "Creative",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+  },
+  {
+    id: 10,
+    firstName: "Manish",
+    email: "employee10@company.com",
+    password: "123",
+    taskCounts: { active: 1, newTask: 0, completed: 2, failed: 0 },
+    tasks: [
+      {
+        taskNo: 1,
+        title: "Database indexing",
+        description: "Improve query performance",
+        date: "2025-02-02",
+        category: "Database",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskNo: 2,
+        title: "Schema migration",
+        description: "Apply schema updates",
+        date: "2025-02-04",
+        category: "Backend",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskNo: 3,
+        title: "Backup verification",
+        description: "Verify backup integrity",
+        date: "2025-02-06",
+        category: "Maintenance",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+    ],
+  },
 ];
 
 const admin = [
@@ -249,13 +430,13 @@ const admin = [
   },
 ];
 
-export const setLocalstorage = () => {
-  localStorage.setItem('employees',JSON.stringify(employees))
-  localStorage.setItem('admin', JSON.stringify(admin))
-}
-export const getLocalstorage = () => {
-  const employees = JSON.parse(localStorage.getItem('employees'))
-  const admin = JSON.parse(localStorage.getItem('admin'))
-  console.log(employees)
-  console.log(admin)
-}
+export const setLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+export const getLocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const admin = JSON.parse(localStorage.getItem("admin"));
+  // console.log(employees, admin);
+  return { employees, admin };
+};
