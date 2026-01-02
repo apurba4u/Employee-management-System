@@ -1,11 +1,60 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../Auth/AuthProvider";
 const CreateTask = () => {
+  const [taskTitle, setTaskTitle] = useState("");
+  const [taskDescription, setTaskDescription] = useState("");
+  const [taskDate, setTaskDate] = useState("");
+  const [category, setCategory] = useState("");
+  const [asignTo, setAsignTo] = useState("");
+  const [newtask, setNewTask] = useState({});
+  const [userData, setUserData] = useContext(AuthContext)
+
+  const submitHandler = (elem) => {
+    elem.preventDefault();
+    setNewTask({
+      taskTitle,
+      taskDescription,
+      taskDate,
+      category,
+      newTask: true,
+      active: false,
+      completed: false,
+      failed: false,
+    });
+    const data = userData
+
+    data.forEach((elem) => {
+      if(asignTo == elem.firstName) {
+        elem.tasks.push(newtask)
+        elem.taskCounts.newTask = elem.taskCounts.newTask + 1
+      }
+    })
+    // localStorage.setItem('employees', JSON.stringify(data))
+    // console.log(taskTitle + " " + taskDate + " " + taskDescription + " " + asignTo + " " + category);
+    setUserData(data)
+    
+    setTaskTitle('')
+    setTaskDescription('')
+    setTaskDate('')
+    setAsignTo('')
+    setCategory('')
+  };
   return (
     <div className="p-5 bg-[#1c1c1c] mt-5 rounded">
-      <form className="flex flex-wrap w-full items-start justify-between">
+      <form
+        onSubmit={(elem) => {
+          submitHandler(elem);
+        }}
+        className="flex flex-wrap w-full items-start justify-between"
+      >
         <div className="w-1/2">
           <div>
             <h3 className="text-sm text-gray-300 mb-0.5">Task Title</h3>
             <input
+              value={taskTitle}
+              onChange={(elem) => {
+                setTaskTitle(elem.target.value);
+              }}
               className="text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border border-gray-400 mb-4"
               type="text"
               placeholder="Make a UI design"
@@ -14,6 +63,10 @@ const CreateTask = () => {
           <div>
             <h3 className="text-sm text-gray-300 mb-0.5">Date</h3>
             <input
+              value={taskDate}
+              onChange={(elem) => {
+                setTaskDate(elem.target.value);
+              }}
               className="text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border border-gray-400 mb-4"
               type="date"
             />
@@ -21,6 +74,10 @@ const CreateTask = () => {
           <div>
             <h3 className="text-sm text-gray-300 mb-0.5">Asign to</h3>
             <input
+              value={asignTo}
+              onChange={(elem) => {
+                setAsignTo(elem.target.value);
+              }}
               className="text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border border-gray-400 mb-4"
               type="text"
               placeholder="employee name"
@@ -29,6 +86,10 @@ const CreateTask = () => {
           <div>
             <h3 className="text-sm text-gray-300 mb-0.5">Category</h3>
             <input
+              value={category}
+              onChange={(elem) => {
+                setCategory(elem.target.value);
+              }}
               className="text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border border-gray-400 mb-4"
               type="text"
               placeholder="design, dev, etc"
@@ -39,6 +100,10 @@ const CreateTask = () => {
         <div className="w-2/5 flex flex-col items-start">
           <h3 className="text-sm text-gray-300 mb-0.5">Description</h3>
           <textarea
+            value={taskDescription}
+            onChange={(elem) => {
+              setTaskDescription(elem.target.value);
+            }}
             className="w-full h-44 text-sm py-2 px-4 rounded outline-none bg-transparent border border-gray-400"
             name=""
             id=""
